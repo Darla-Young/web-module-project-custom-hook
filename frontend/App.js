@@ -4,9 +4,13 @@ import axios from "axios";
 import Charts from "./components/Charts";
 import Navbar from "./components/Navbar";
 
+// * [x] Replace the darkMode state definition with useDarkMode in App.js.
+
+import * as useDarkMode from '../hooks/useDarkMode';
+
 const App = () => {
   const [coinData, setCoinData] = useState([]);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useDarkMode('darkMode', false);
 
   useEffect(() => {
     axios
