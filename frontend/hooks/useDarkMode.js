@@ -2,9 +2,11 @@
 // * [x] Return the slice of state created and the state modification function.
 // * [x] Import useLocalStorage into the useDarkMode hook.
 
-import * as useLocalStorage from './useLocalStorage';
+import useLocalStorage from './useLocalStorage';
 
-const useDarkMode = (key, value) => {
-    const [darkMode, setDarkMode] = useLocalStorage(key, value)
+const useDarkMode = (initialValue) => {
+    const [darkMode, setDarkMode] = useLocalStorage("darkMode", initialValue)
     return [darkMode, setDarkMode]
 };
+
+export default useDarkMode
